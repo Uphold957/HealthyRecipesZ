@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		A10000012FB50001003C8654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000112FB50001003C8654 /* AppDelegate.swift */; };
 		A10000022FB50001003C8654 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000122FB50001003C8654 /* SceneDelegate.swift */; };
+		A100000C2FB60001003C8654 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001D2FB60001003C8654 /* MainTabBarController.swift */; };
 		A10000032FB50001003C8654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000132FB50001003C8654 /* ViewController.swift */; };
+		A100000D2FB60001003C8654 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001E2FB60001003C8654 /* ProfileViewController.swift */; };
 		A10000042FB50001003C8654 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000142FB50001003C8654 /* Recipe.swift */; };
 		A10000052FB50001003C8654 /* RecipeFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000152FB50001003C8654 /* RecipeFeedViewModel.swift */; };
 		A10000062FB50001003C8654 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000162FB50001003C8654 /* RecipeCell.swift */; };
@@ -24,7 +26,9 @@
 		8349ECB92FB4F670003C8654 /* HealthyRecipesZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyRecipesZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10000112FB50001003C8654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A10000122FB50001003C8654 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A100001D2FB60001003C8654 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A10000132FB50001003C8654 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A100001E2FB60001003C8654 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A10000142FB50001003C8654 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		A10000152FB50001003C8654 /* RecipeFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeedViewModel.swift; sourceTree = "<group>"; };
 		A10000162FB50001003C8654 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -68,7 +72,9 @@
 			children = (
 				A10000112FB50001003C8654 /* AppDelegate.swift */,
 				A10000122FB50001003C8654 /* SceneDelegate.swift */,
+				A100001D2FB60001003C8654 /* MainTabBarController.swift */,
 				A10000132FB50001003C8654 /* ViewController.swift */,
+				A100001E2FB60001003C8654 /* ProfileViewController.swift */,
 				A10000202FB50001003C8654 /* Models */,
 				A10000212FB50001003C8654 /* ViewModels */,
 				A10000222FB50001003C8654 /* Views */,
@@ -190,7 +196,9 @@
 			files = (
 				A10000012FB50001003C8654 /* AppDelegate.swift in Sources */,
 				A10000022FB50001003C8654 /* SceneDelegate.swift in Sources */,
+				A100000C2FB60001003C8654 /* MainTabBarController.swift in Sources */,
 				A10000032FB50001003C8654 /* ViewController.swift in Sources */,
+				A100000D2FB60001003C8654 /* ProfileViewController.swift in Sources */,
 				A10000042FB50001003C8654 /* Recipe.swift in Sources */,
 				A10000052FB50001003C8654 /* RecipeFeedViewModel.swift in Sources */,
 				A10000062FB50001003C8654 /* RecipeCell.swift in Sources */,

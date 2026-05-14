@@ -1,0 +1,4 @@
+interface:
+  display_name: "Summarize Commit Changes"
+  short_description: "Summarize staged or current changes before commits."
+  default_prompt: "Before committing, summarize the current updates with one core sentence and detailed capability changes."
