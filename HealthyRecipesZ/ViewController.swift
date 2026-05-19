@@ -9,6 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     private let viewModel = RecipeFeedViewModel()
+    private var lastRequestedMoreIndex = -1
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -45,6 +46,7 @@ final class ViewController: UIViewController {
         view.backgroundColor = UIColor(red: 0.94, green: 0.98, blue: 0.94, alpha: 1)
         setupLayout()
         updatePageLabel(index: 0)
+        loadRecipes()
     }
 
     override func viewDidLayoutSubviews() {
@@ -74,6 +76,27 @@ final class ViewController: UIViewController {
     private func updatePageLabel(index: Int) {
         pageLabel.text = viewModel.pageText(for: index)
     }
+
+    private func loadRecipes() {
+        viewModel.loadRecipes { [weak self] in
+            guard let self = self else { return }
+            self.collectionView.reloadData()
+            self.collectionView.setContentOffset(.zero, animated: false)
+            self.lastRequestedMoreIndex = -1
+            self.updatePageLabel(index: 0)
+        }
+    }
+
+    private func loadMoreRecipesIfNeeded(visibleIndex: Int) {
+        guard visibleIndex != lastRequestedMoreIndex else { return }
+        viewModel.loadMoreRecipesIfNeeded(currentIndex: visibleIndex) { [weak self] didRequest in
+            guard let self = self else { return }
+            if didRequest {
+                self.lastRequestedMoreIndex = visibleIndex
+                self.collectionView.reloadData()
+            }
+        }
+    }
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -91,6 +114,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let page = Int(round(scrollView.contentOffset.y / max(scrollView.bounds.height, 1)))
-        updatePageLabel(index: viewModel.normalizedIndex(page))
+        let visibleIndex = viewModel.normalizedIndex(page)
+        updatePageLabel(index: visibleIndex)
+        loadMoreRecipesIfNeeded(visibleIndex: visibleIndex)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.bounds.height > 0 else { return }
+        let page = Int(round(scrollView.contentOffset.y / scrollView.bounds.height))
+        loadMoreRecipesIfNeeded(visibleIndex: viewModel.normalizedIndex(page))
     }
 }

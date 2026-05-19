@@ -8,6 +8,7 @@
 import Foundation
 
 struct Recipe {
+    let id: String
     let title: String
     let subtitle: String
     let duration: String
@@ -18,6 +19,7 @@ struct Recipe {
     let ingredients: [String]
     let steps: [String]
     let mediaLabel: String
+    let imageURL: URL?
     let theme: RecipeTheme
 }
 

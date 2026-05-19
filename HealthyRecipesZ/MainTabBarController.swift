@@ -29,7 +29,14 @@ final class MainTabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "person.fill")
         )
 
-        viewControllers = [discover, profile]
+        let wheel = DecisionWheelViewController()
+        wheel.tabBarItem = UITabBarItem(
+            title: "轮盘",
+            image: UIImage(systemName: "sparkles"),
+            selectedImage: UIImage(systemName: "sparkles")
+        )
+
+        viewControllers = [discover, wheel, profile]
     }
 
     private func setupGlassTabBar() {
